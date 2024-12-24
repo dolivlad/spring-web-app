@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit monitor</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <th:block th:insert="~{topMenu}"></th:block>
+    <div class="main-content">
+        <h2>Edit Monitor</h2>
+        <form th:action="@{/edit/save}" th:object="${officeLEDMonitor}" method="POST">
+            <div class="form-group">
+                <label for="brand">Brand</label>
+                <input type="text" id="brand" class="form-control" placeholder="Enter brand" th:field="*{brand}" required/>
+            </div>
+            <div class="form-group">
+                <label for="model">Model</label>
+                <input type="text" id="model" class="form-control" placeholder="Enter model" th:field="*{model}" readonly/>
+            </div>
+            <div class="form-group">
+                <label for="screenSize">Screen size</label>
+                <input type="number" id="screenSize" class="form-control" th:field="*{screenSize}" step="0.01" required/>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" class="form-control" th:field="*{price}" step="0.01" required/>
+            </div>
+            <div class="form-group">
+                <label for="isCurved">Is curved</label>
+                <select class="form-control" id="isCurved" th:field="*{isCurved}" required>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="hasBlueLightFilter">Has blue light filter</label>
+                <select class="form-control" id="hasBlueLightFilter" th:field="*{hasBlueLightFilter}" required>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

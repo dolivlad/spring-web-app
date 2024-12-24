@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF5E6;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #FF8C42;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    color: #662C00;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #FFE4B5;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a:hover {
+    background-color: #FFB266;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background: linear-gradient(to bottom, #FFEBCC, #FFDAB9);
+    overflow-y: auto;
+}
+
+.main-content h2 {
+    margin-top: 0;
+    color: #FF8C42;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #662C00;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #662C00;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #FF8C42;
+    color: #662C00;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #FFB266;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #FFE4B5;
+}
+
+table th, table td {
+    border: 1px solid #662C00;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #FF8C42;
+    color: #662C00;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #FFF2E6;
+}
+
+table tr:hover {
+    background-color: #FFDAB9;
+}
+
+table td {
+    color: #333;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Find monitors by brand</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <th:block th:insert="~{topMenu}"></th:block>
+    <div class="main-content">
+        <h2>Find monitors by brand</h2>
+        <form th:action="@{/OfficeLEDMonitorByBrand}" method="POST">
+            <div class="form-group">
+                <label for="brand">Monitor brand:</label>
+                <input type="text" class="form-control" id="brand" name="brand" placeholder="Enter brand" required/>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <div th:if="${allOfficeLEDMonitor != null}">
+            <h3>Monitors by brand</h3>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Screen size</th>
+                    <th>Price</th>
+                    <th>Is curved</th>
+                    <th>Has blue light filter</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="officeLEDMonitor : ${allOfficeLEDMonitor}">
+                    <td th:text="${officeLEDMonitor.id}"></td>
+                    <td th:text="${officeLEDMonitor.brand}"></td>
+                    <td th:text="${officeLEDMonitor.model}"></td>
+                    <td th:text="${officeLEDMonitor.screenSize}"></td>
+                    <td th:text="${officeLEDMonitor.price}"></td>
+                    <td th:text="${officeLEDMonitor.isCurved ? 'Yes' : 'No'}"></td>
+                    <td th:text="${officeLEDMonitor.getHasBlueLightFilter() ? 'Yes' : 'No'}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

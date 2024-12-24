@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Monitors</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <th:block th:insert="~{topMenu}"></th:block>
+    <div class="main-content">
+        <h2>Monitors</h2>
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Screen size</th>
+                <th>Price</th>
+                <th>Is curved</th>
+                <th>Has blue light filter</th>
+            </tr>
+            <tr th:each="officeLEDMonitor : ${allOfficeLEDMonitor}">
+                <td th:text="${officeLEDMonitor.id}"></td>
+                <td th:text="${officeLEDMonitor.brand}"></td>
+                <td th:text="${officeLEDMonitor.model}"></td>
+                <td th:text="${officeLEDMonitor.screenSize}"></td>
+                <td th:text="${officeLEDMonitor.price}"></td>
+                <td th:text="${officeLEDMonitor.isCurved ? 'Yes' : 'No'}"></td>
+                <td th:text="${officeLEDMonitor.getHasBlueLightFilter() ? 'Yes' : 'No'}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

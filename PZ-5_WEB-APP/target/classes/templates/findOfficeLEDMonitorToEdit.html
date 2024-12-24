@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Find monitor to edit</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <th:block th:insert="~{topMenu}"></th:block>
+    <div class="main-content">
+        <h2>Find monitor to edit</h2>
+        <form th:action="@{/edit}" method="POST">
+            <div class="form-group">
+                <label for="modelAtr">Monitor model:</label>
+                <input type="text" class="form-control" id="modelAtr" name="modelAtr" placeholder="Enter model" required/>
+            </div>
+            <button type="submit" class="btn btn-primary">Find monitor</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
